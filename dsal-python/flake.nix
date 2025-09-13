@@ -34,6 +34,8 @@
           ];
 
           shellHook = ''
+            cd dsal-python
+
             VENV=.venv
             if [ ! -d $VENV ]; then
                 virtualenv $VENV
@@ -41,7 +43,6 @@
             source ./$VENV/bin/activate
             echo "Python virtual environment activated."
 
-            # Source .bashrc
             . .bashrc
           '';
         };
