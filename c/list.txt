@@ -1,0 +1,426 @@
+/*
+=====================================================
+UNIVERSAL TEST DATASET + EXHAUSTIVE ALGORITHM PROMPTS
+(C LANGUAGE FOCUS)
+=====================================================
+*/
+
+// Dataset in C-style structures
+
+int integers[] = {3, 1, 4, 1, 5, 9, -2, 6, 5, 3, 5};
+int integers_size = sizeof(integers)/sizeof(integers[0]);
+
+const char *strings[] = {"apple", "banana", "apple", "cherry", "date", "fig", "grape"};
+int strings_size = sizeof(strings)/sizeof(strings[0]);
+
+struct KeyValue {
+    const char* key;
+    int value;
+} key_value_pairs[] = {
+    {"apple", 3},
+    {"banana", 5},
+    {"cherry", 2},
+    {"date", 1},
+    {"fig", 6},
+    {"grape", 4}
+};
+int kv_size = sizeof(key_value_pairs)/sizeof(key_value_pairs[0]);
+
+struct Edge {
+    int from;
+    int to;
+} graph_edges[] = {
+    {1, 2},
+    {1, 3},
+    {2, 4},
+    {3, 4},
+    {4, 5}
+};
+int graph_nodes[] = {1, 2, 3, 4, 5};
+int graph_edges_size = sizeof(graph_edges)/sizeof(graph_edges[0]);
+int graph_nodes_size = sizeof(graph_nodes)/sizeof(graph_nodes[0]);
+
+// Binary tree node for C
+struct TreeNode {
+    int value;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+
+// Manually define tree nodes or build dynamically in code for tests
+
+int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+const char* text = "madam racecar level deed civic noon rotor stats";
+
+struct Point {
+    int x;
+    int y;
+};
+
+struct Point coordinates[] = {
+    {1, 2},
+    {3, 4},
+    {-1, -2},
+    {0, 0}
+};
+int coordinates_size = sizeof(coordinates)/sizeof(coordinates[0]);
+
+/*
+=====================================================
+EXHAUSTIVE USAGE PROMPTS FOR C IMPLEMENTATION
+=====================================================
+*/
+
+// === BASIC ARRAY OPERATIONS ===
+/*
+ * 1. Array Traversal
+ *    Iterate over 'integers' array using for loop and print each element.
+ *
+ * 2. Linear Search
+ *    Search for number 5 in 'integers' using simple linear search loop.
+ *
+ * 3. Binary Search
+ *    Sort 'integers' with qsort() then implement binary search function.
+ *
+ * 4. Remove Duplicates
+ *    Remove duplicates from 'integers' in-place or by creating new array.
+ */
+
+// === SORTING ALGORITHMS ===
+/*
+ * 5. Bubble Sort
+ *    Implement bubble sort on 'integers' array.
+ *
+ * 6. Selection Sort
+ *    Implement selection sort on 'integers'.
+ *
+ * 7. Insertion Sort
+ *    Implement insertion sort on 'integers'.
+ *
+ * 8. Merge Sort
+ *    Implement merge sort recursively on 'integers'.
+ *
+ * 9. Quick Sort
+ *    Implement quick sort on 'integers'.
+ *
+ * 10. Heap Sort
+ *     Implement heap sort using array-based binary heap.
+ *
+ * 11. Counting Sort
+ *     Implement counting sort for non-negative integers in 'integers'.
+ *
+ * 12. Radix Sort
+ *     Implement radix sort using counting sort as subroutine.
+ *
+ * 13. Bucket Sort
+ *     Implement bucket sort on 'integers'.
+ */
+
+// === STRINGS ===
+/*
+ * 14. Palindrome Check
+ *     Write a function to check if a string (char*) is palindrome.
+ *
+ * 15. Frequency Count
+ *     Use hash table (e.g. chaining with linked lists) to count word frequency in 'strings'.
+ *
+ * 16. Substring Search (Naive)
+ *     Implement naive substring search of "civic" in 'text'.
+ *
+ * 17. KMP Algorithm
+ *     Implement Knuth-Morris-Pratt substring search.
+ *
+ * 18. Rabin-Karp
+ *     Implement Rabin-Karp substring search.
+ *
+ * 19. Z-Algorithm
+ *     Implement Z-algorithm to find pattern occurrences.
+ *
+ * 20. Manacher's Algorithm
+ *     Implement Manacher’s algorithm for longest palindromic substring.
+ *
+ * 21. Aho-Corasick
+ *     Build Aho-Corasick automaton to find multiple string patterns.
+ *
+ * 22. Longest Common Subsequence (LCS)
+ *     Implement LCS DP between "apple" and "grape".
+ *
+ * 23. Longest Common Substring
+ *     Implement longest common substring DP between "banana" and "bandana".
+ */
+
+// === HASHING ===
+/*
+ * 24. Hash Map Lookup
+ *     Implement or use a hash map to lookup "fig" in key_value_pairs.
+ *
+ * 25. Detect Duplicates Using Set
+ *     Use hash set (chained or open addressing) to detect duplicates in 'strings'.
+ *
+ * 26. Group Anagrams
+ *     Group strings that are anagrams using hash maps.
+ *
+ * 27. Word Frequency
+ *     Count frequencies of words from 'text' with hash map.
+ */
+
+// === TREES ===
+/*
+ * 28. Inorder Traversal
+ *     Implement recursive inorder traversal on binary tree.
+ *
+ * 29. Preorder Traversal
+ *     Implement recursive preorder traversal.
+ *
+ * 30. Postorder Traversal
+ *     Implement recursive postorder traversal.
+ *
+ * 31. Level Order Traversal
+ *     Implement BFS-based level order traversal using a queue.
+ *
+ * 32. Search in BST
+ *     Search for value 7 in BST.
+ *
+ * 33. Tree Height
+ *     Compute tree height recursively.
+ *
+ * 34. Validate BST
+ *     Check if tree satisfies BST properties.
+ *
+ * 35. Lowest Common Ancestor (LCA)
+ *     Find LCA of two nodes in binary tree.
+ */
+
+// === ADVANCED TREES ===
+/*
+ * 36. AVL Tree
+ *     Implement AVL tree insertion and rotations.
+ *
+ * 37. Red-Black Tree
+ *     Implement Red-Black tree insertions.
+ *
+ * 38. Segment Tree
+ *     Build segment tree for range sum queries on 'integers'.
+ *
+ * 39. Fenwick Tree (BIT)
+ *     Build BIT and query prefix sums.
+ *
+ * 40. Suffix Tree
+ *     Build suffix tree from 'text' using Ukkonen’s algorithm.
+ *
+ * 41. Trie
+ *     Build Trie from 'strings' and implement prefix search.
+ *
+ * 42. Radix Tree
+ *     Implement compressed trie (Radix tree).
+ *
+ * 43. Treap
+ *     Implement randomized BST (Treap) insertion.
+ *
+ * 44. Cartesian Tree
+ *     Build Cartesian tree from 'integers'.
+ *
+ * 45. Interval Tree
+ *     Implement interval tree for interval overlaps.
+ *
+ * 46. Rope
+ *     Implement Rope data structure for efficient string concatenation.
+ */
+
+// === HEAPS & PRIORITY QUEUES ===
+/*
+ * 47. Min-Heap
+ *     Implement binary min-heap insert and extract-min.
+ *
+ * 48. Max-Heap
+ *     Implement max-heap.
+ *
+ * 49. Median Heap
+ *     Implement two heaps to track median dynamically.
+ *
+ * 50. Fibonacci Heap
+ *     Implement basic Fibonacci heap operations.
+ *
+ * 51. Pairing Heap
+ *     Implement pairing heap insert and delete operations.
+ */
+
+// === GRAPH ALGORITHMS ===
+/*
+ * 52. BFS
+ *     Implement BFS on adjacency list starting from node 1.
+ *
+ * 53. DFS
+ *     Implement DFS recursively or iteratively.
+ *
+ * 54. Topological Sort
+ *     Implement topological sort using DFS or Kahn’s algorithm.
+ *
+ * 55. Dijkstra’s Algorithm
+ *     Implement Dijkstra's shortest path with priority queue.
+ *
+ * 56. Bellman-Ford
+ *     Implement Bellman-Ford to detect negative cycles.
+ *
+ * 57. Floyd-Warshall
+ *     Implement all-pairs shortest path.
+ *
+ * 58. Kruskal’s MST
+ *     Implement MST using Union-Find and sorting edges.
+ *
+ * 59. Prim’s MST
+ *     Implement Prim’s algorithm.
+ *
+ * 60. Tarjan’s SCC
+ *     Implement Tarjan’s strongly connected components.
+ *
+ * 61. Kosaraju’s SCC
+ *     Implement Kosaraju’s algorithm.
+ *
+ * 62. Union-Find (Disjoint Set)
+ *     Implement Union-Find and use it to detect cycles.
+ *
+ * 63. Edmonds-Karp
+ *     Implement max flow using Edmonds-Karp.
+ */
+
+// === DYNAMIC PROGRAMMING ===
+/*
+ * 64. Fibonacci (Memoization)
+ *     Implement recursive memoized Fibonacci.
+ *
+ * 65. 0/1 Knapsack
+ *     Solve knapsack with DP.
+ *
+ * 66. Subset Sum
+ *     Check subset sums to 10.
+ *
+ * 67. Longest Increasing Subsequence
+ *     DP or binary search method.
+ *
+ * 68. Matrix Chain Multiplication
+ *     Minimize multiplication cost DP.
+ *
+ * 69. Edit Distance
+ *     Compute edit distance DP.
+ *
+ * 70. Bitmask DP
+ *     Solve simplified TSP on 4 nodes.
+ *
+ * 71. Digit DP
+ *     Count numbers without repeated digits.
+ *
+ * 72. DP with Monotonic Queue
+ *     Sliding window optimization.
+ *
+ * 73. Convex Hull Trick
+ *     Optimize DP using convex hull trick.
+ */
+
+// === MATH & NUMBER THEORY ===
+/*
+ * 74. GCD (Euclidean)
+ *     Compute GCD of array.
+ *
+ * 75. LCM
+ *     Compute LCM.
+ *
+ * 76. Sieve of Eratosthenes
+ *     Generate primes less than 100.
+ *
+ * 77. Modular Exponentiation
+ *     Implement powmod function.
+ *
+ * 78. Chinese Remainder Theorem
+ *     Solve modular linear equations.
+ *
+ * 79. Fast Fourier Transform
+ *     Implement FFT for polynomial multiplication.
+ *
+ * 80. Modular Inverse
+ *     Compute modular inverse using Extended Euclidean.
+ *
+ * 81. Combinatorics (nCr)
+ *     Compute combinations with modular arithmetic.
+ */
+
+// === GEOMETRY ===
+/*
+ * 82. Convex Hull (Graham Scan)
+ *     Implement Graham scan on points.
+ *
+ * 83. Point in Polygon
+ *     Ray casting algorithm.
+ *
+ * 84. Closest Pair of Points
+ *     Divide and conquer method.
+ *
+ * 85. Line Sweep
+ *     Detect line segment intersections.
+ *
+ * 86. Rotating Calipers
+ *     Compute polygon diameter.
+ */
+
+// === SLIDING WINDOW / TWO POINTERS ===
+/*
+ * 87. Max Sum Subarray (Fixed size)
+ *     Sliding window max sum of size 3.
+ *
+ * 88. Longest Unique Substring
+ *     Sliding window for longest no-repeating substring.
+ *
+ * 89. Two Sum
+ *     Use hash map or two pointers after sorting.
+ *
+ * 90. Three Sum
+ *     Find triplets summing to zero.
+ *
+ * 91. Minimum Window Substring
+ *     Find smallest substring in 'text' containing "civic".
+ */
+
+// === CACHING & STORAGE STRUCTURES ===
+/*
+ * 92. LRU Cache
+ *     Implement LRU cache using doubly linked list and hash map.
+ *
+ * 93. Bloom Filter
+ *     Implement Bloom filter with multiple hash functions.
+ *
+ * 94. Skip List
+ *     Implement skip list insert and search.
+ *
+ * 95. Discretization
+ *     Coordinate compress integer array.
+ *
+ * 96. Circular Buffer
+ *     Implement circular queue with fixed size.
+ */
+
+// === BONUS ===
+/*
+ * 97. Multithreading safe data structures (e.g. thread-safe queue)
+ * 98. Persistent Data Structures (e.g. persistent segment tree)
+ * 99. Memory pool allocator for nodes
+ * 100. Custom allocator for dynamic structures
+ */
+
+//////////////////////////////////
+// Example usage: print prompts //
+//////////////////////////////////
+
+#include <stdio.h>
+
+int main() {
+    printf("🧠 C Language Data Structures & Algorithms Usage Prompts:\n\n");
+
+    const char *prompts[] = {
+        "1. Array Traversal: Iterate over 'integers' and print elements.",
+        "2. Linear Search: Search for 5 in 'integers' with linear search.",
+        "3. Binary Search: Sort 'integers' and implement binary search.",

@@ -54,7 +54,7 @@
           # ];
 
           shellHook = with pkgs; ''
-            cd dsal-c
+            cd /home/permalik/chamber/studio/lab/dsal/c
             . .bashrc
           '';
         };

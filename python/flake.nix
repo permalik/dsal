@@ -34,7 +34,7 @@
           ];
 
           shellHook = ''
-            cd dsal-python
+            cd /home/permalik/chamber/studio/lab/dsal/python
 
             VENV=.venv
             if [ ! -d $VENV ]; then
